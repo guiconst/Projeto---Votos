@@ -1,0 +1,40 @@
+:root{--fundo:#140a2b;--topo:#2a1457;--card:#1f1240;--linha:#3d2a73;--roxo:#7c3aed;--claro:#c4b5fd;--texto:#efe9ff;--aviso:#3a2a6b;--erro:#e5484d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:var(--texto);font:16px/1.5 system-ui,sans-serif}
+h1,.num{font-family:'Press Start 2P',ui-monospace,monospace}
+.topo{background:var(--topo);border-bottom:4px solid var(--roxo);padding:1.25rem 1rem}
+.topo h1{margin:0;font-size:1.3rem;line-height:1.4;color:var(--claro)}
+.topo p{margin:.5rem 0 0;opacity:.85}
+.barra{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem;align-items:center}
+main{max-width:76rem;margin:0 auto;padding:1rem}
+.selo{padding:.15rem .6rem;border-radius:99px;background:var(--claro);color:#1b0f3a;font-size:.85rem;font-weight:600}
+.selo.off{background:var(--erro);color:#fff}
+.btn{border:0;border-radius:.4rem;padding:.55rem 1rem;background:var(--roxo);color:#fff;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover:not(:disabled){background:#8b5cf6}
+.btn.sec{background:transparent;color:var(--claro);border:1px solid var(--claro)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.aviso{background:var(--aviso);padding:.6rem .8rem;border-radius:.4rem;border-left:4px solid var(--claro)}
+.lista,.resultado{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.card{display:grid;grid-template-columns:6.5rem 1fr;gap:.9rem;padding:.9rem;background:var(--card);border:1px solid var(--linha);border-radius:.5rem}
+.foto{position:relative;aspect-ratio:3/4;background:var(--topo);border-radius:.4rem;overflow:hidden;display:grid;place-items:center}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.num{font-size:1.6rem;color:var(--claro)}
+.card h2{margin:0;font-size:1.15rem}
+.card small{color:var(--claro)}
+.card ul{margin:.4rem 0;padding-left:1.1rem}
+.card .btn{margin-top:.3rem}
+.linha{display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem}
+.fundo{grid-column:1/-1;height:.8rem;background:var(--topo);border-radius:99px;overflow:hidden}
+.fundo i{display:block;height:100%;background:var(--roxo)}
+.vazio{max-width:30rem;margin:4rem auto;padding:1rem;text-align:center}
+.vazio h1{font-size:1.2rem;color:var(--claro)}
+
+/* Grade de jogos: cards lado a lado, capa em cima */
+.lista{grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem}
+.lista .card{display:flex;flex-direction:column}
+.lista .card>div:last-child{display:flex;flex-direction:column;flex:1}
+.lista .card .btn{margin-top:auto;width:100%}
+.lista .card ul{margin-bottom:.8rem}
+.resultado{max-width:46rem;margin:0 auto}
+.foto img.ctn{object-fit:contain;padding:.5rem}

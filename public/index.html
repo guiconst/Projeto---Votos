@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 20 Jogos</title>
+  <meta name="theme-color" content="#2a1457">
+  <link rel="manifest" href="/manifest.json">
+  <!-- JUSTIFICAR NO README: preload = CSS usado já na primeira pintura -->
+  <link rel="preload" href="/style.css" as="style">
+  <!-- prefetch = próxima navegação provável após votar -->
+  <link rel="prefetch" href="/resultado.html">
+  <!-- dns-prefetch = domínio externo realmente usado (fontes) -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Top 20 Jogos</h1>
+    <p>Vote no melhor jogo de todos os tempos. Eleição simulada.</p>
+    <div class="barra">
+      <span id="status" class="selo">Online</span>
+      <span id="pendentes" class="selo" hidden></span>
+      <a class="btn sec" href="/resultado.html">Ver apuração</a>
+      <button id="btnNotif" class="btn sec" type="button">Ativar avisos</button>
+    </div>
+  </header>
+  <main>
+    <p id="aviso" class="aviso" hidden></p>
+    <ul id="lista" class="lista"></ul>
+  </main>
+  <script src="/db.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

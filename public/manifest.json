@@ -1,0 +1,9 @@
+{
+  "name": "Eleições Digitais - Top 20 Jogos",
+  "short_name": "Eleições",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#140a2b",
+  "theme_color": "#2a1457",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

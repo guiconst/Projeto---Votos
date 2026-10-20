@@ -3,19 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Apuração</title>
+  <title>Apuração - Top 20 Jogos</title>
+  <meta name="description" content="Apuração da eleição simulada Top 20 Jogos.">
   <meta name="theme-color" content="#2a1457">
   <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"></noscript>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header class="topo">
     <h1>Apuração</h1>
-    <div class="barra"><span id="status" class="selo">Online</span><span id="pendentes" class="selo" hidden></span><a class="btn sec" href="/">Voltar</a></div>
+    <div class="barra"><span id="status" class="selo" role="status">Online</span><span id="pendentes" class="selo" role="status" hidden></span><a class="btn sec" href="/">Voltar</a></div>
   </header>
   <main>
-    <p id="aviso" class="aviso" hidden></p>
+    <p id="aviso" class="aviso" role="status" hidden></p>
     <ol id="resultado" class="resultado"></ol>
   </main>
   <script src="/db.js"></script>

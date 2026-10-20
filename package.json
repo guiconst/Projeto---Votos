@@ -1,8 +1,15 @@
 {
   "name": "eleicoes-digitais",
-  "version": "1.0.0",
-  "description": "Eleição simulada offline-first (PWA)",
+  "version": "2.0.0",
+  "description": "Eleição simulada offline-first (PWA): Service Worker, Cache API, Background Sync e Push",
   "main": "server.js",
-  "scripts": { "start": "node server.js" },
-  "dependencies": { "express": "^4.19.2" }
+  "scripts": {
+    "start": "node server.js",
+    "push": "node scripts/enviar-push.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "web-push": "^3.6.7"
+  }
 }

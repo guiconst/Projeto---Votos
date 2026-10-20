@@ -1,0 +1,11 @@
+# Publicação gratuita no Render (https://render.com): New + > Blueprint > escolha este repositório
+services:
+  - type: web
+    name: eleicoes-digitais
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: ADMIN_TOKEN
+        generateValue: true

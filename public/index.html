@@ -4,15 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Top 20 Jogos</title>
+  <meta name="description" content="Eleição simulada: vote no melhor jogo de todos os tempos. Funciona mesmo sem internet (PWA).">
   <meta name="theme-color" content="#2a1457">
   <link rel="manifest" href="/manifest.json">
-  <!-- JUSTIFICAR NO README: preload = CSS usado já na primeira pintura -->
-  <link rel="preload" href="/style.css" as="style">
-  <!-- prefetch = próxima navegação provável após votar -->
-  <link rel="prefetch" href="/resultado.html">
-  <!-- dns-prefetch = domínio externo realmente usado (fontes) -->
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- DNS-PREFETCH + PRECONNECT: o app usa fontes do Google, que vêm de 2 domínios externos:
+       fonts.googleapis.com (o CSS) e fonts.gstatic.com (os arquivos da fonte).
+       Resolver o DNS/abrir a conexão cedo tira essa espera do caminho da fonte. -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- PRELOAD: o style.css é necessário já na primeira pintura. Com preload ele começa a baixar
+       em paralelo, sem esperar o parser chegar ao <link rel="stylesheet"> lá embaixo. -->
+  <link rel="preload" href="/style.css" as="style">
+
+  <!-- PREFETCH: depois de votar, o próximo passo provável é "Ver apuração". Baixa a página
+       com prioridade baixa, sem competir com o carregamento da tela atual. -->
+  <link rel="prefetch" href="/resultado.html">
+
+  <!-- Fonte decorativa carregada sem bloquear a renderização (media=print -> all ao terminar) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"></noscript>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -20,14 +36,14 @@
     <h1>Top 20 Jogos</h1>
     <p>Vote no melhor jogo de todos os tempos. Eleição simulada.</p>
     <div class="barra">
-      <span id="status" class="selo">Online</span>
-      <span id="pendentes" class="selo" hidden></span>
+      <span id="status" class="selo" role="status">Online</span>
+      <span id="pendentes" class="selo" role="status" hidden></span>
       <a class="btn sec" href="/resultado.html">Ver apuração</a>
       <button id="btnNotif" class="btn sec" type="button">Ativar avisos</button>
     </div>
   </header>
   <main>
-    <p id="aviso" class="aviso" hidden></p>
+    <p id="aviso" class="aviso" role="status" hidden></p>
     <ul id="lista" class="lista"></ul>
   </main>
   <script src="/db.js"></script>
